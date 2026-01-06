@@ -19,7 +19,7 @@ def clean_clipboard():
 
 root = tk.Tk()
 root.title("Decklist Cleaner")
-root.geometry("300x150")
+root.geometry("300x180")
 root.resizable(False, False)
 
 frame = tk.Frame(root, padx=20, pady=20)
