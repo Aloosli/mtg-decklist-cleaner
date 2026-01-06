@@ -1,4 +1,4 @@
-import tkinter as tk
+import tkinter as ttk
 import pyperclip
 
 def clean_clipboard():
@@ -17,18 +17,18 @@ def clean_clipboard():
 
 
 
-root = tk.Tk()
+root = tk.Tk() 
 root.title("Decklist Cleaner")
 root.geometry("300x180")
 root.resizable(False, False)
 
-frame = tk.Frame(root, padx=20, pady=20)
+frame = ttk.Frame(root, padx=20, pady=20)
 frame.pack(expand=True, fill=tk.BOTH)
 
-title_label = tk.Label(frame, text="Decklist Cleaner", font=("Helvetica", 16,"bold"))
+title_label = ttk.Label(frame, text="Decklist Cleaner", font=("Helvetica", 16,"bold"))
 title_label.pack(pady=(0, 10))
 
-clean_button = tk.Button(
+clean_button = ttk.Button(
     frame,
     text="Clean Clipboard",
     command=clean_clipboard,
@@ -38,7 +38,7 @@ clean_button = tk.Button(
 )
 clean_button.pack()
 
-status_label = tk.Label(frame, text="",fg="green")
+status_label = ttk.Label(frame, text="",fg="green")
 status_label.pack( pady=(10, 0))
 clean_clipboard()
 root.bind("<Control-Return>", lambda e: clean_clipboard())
