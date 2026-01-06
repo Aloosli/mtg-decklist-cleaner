@@ -9,7 +9,7 @@ def clean_clipboard():
     cleaned = "\n".join(cleaned_lines)
 
     if cleaned != text:
-    pyperclip.copy(cleaned)
+        pyperclip.copy(cleaned)
 
 
     removed = len(lines) - len(cleaned_lines)
