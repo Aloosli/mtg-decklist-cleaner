@@ -45,21 +45,22 @@ def clean_clipboard():
 # NOTE: This must always be tk.Tk(), never ttk.Tk()
 root = tk.Tk()
 root.title("Decklist Cleaner")
-root.geometry("300x180")
+root.minsize(280, 150)
+
 root.resizable(False, False)
 
 # Main container frame with padding
 # ttk widgets inherit the system theme (less Windows XP vibes)
-frame = ttk.Frame(root, padding=20)
+frame = ttk.Frame(root, padding=(24, 20))
 frame.pack(expand=True, fill=tk.BOTH)
 
 # Title text at the top of the window
 title_label = ttk.Label(
     frame,
     text="Decklist Cleaner",
-    font=("Helvetica", 16, "bold")
+    font=("Segoe UI", 16, "bold")
 )
-title_label.pack(pady=(0, 10))
+title_label.pack(pady=(0, 14))
 
 # Main action button
 clean_button = ttk.Button(
@@ -67,12 +68,12 @@ clean_button = ttk.Button(
     text="Clean Clipboard",
     command=clean_clipboard
 )
-clean_button.pack(pady=(0, 8))
+clean_button.pack(pady=(0, 10))
 
 # Status label for feedback after cleaning
-# ttk.Label uses "foreground", not "fg"
+
 status_label = ttk.Label(frame, text="", foreground="green")
-status_label.pack(pady=(8, 0))
+status_label.pack()
 
 # --------------------------------------------------
 # Keyboard shortcuts and startup behaviour
